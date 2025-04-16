@@ -1,7 +1,4 @@
-import {
-  PostModel,
-  PostModelAPI,
-} from '../../../domain/models/post.model';
+import { PostModel, PostModelAPI } from "../../../domain/models/post.model";
 
 function toPostModel(postApi: PostModelAPI): PostModel {
   return {
@@ -11,4 +8,4 @@ function toPostModel(postApi: PostModelAPI): PostModel {
   };
 }
 
-export const postListAdapter = {toPostModel};
+export const postListAdapter = { toPostModel };
