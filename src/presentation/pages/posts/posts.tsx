@@ -7,7 +7,7 @@ type Props = {
   postListUseCase: IPostList;
 };
 
-export function Post({ postListUseCase }: Props) {
+export function Posts({ postListUseCase }: Props) {
   const [posts, setPosts] = useState<PostModel[]>([]);
 
   useEffect(() => {
@@ -20,5 +20,7 @@ export function Post({ postListUseCase }: Props) {
     loadPosts();
   }, []);
 
-  return posts.map((post) => <ItemPost post={post} />);
+  return posts.map((post) => (
+    <ItemPost key={post.id} data-testid="post" post={post} />
+  ));
 }
